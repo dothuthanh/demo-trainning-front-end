@@ -10,6 +10,7 @@ import { HelloComponenetComponent } from './hello-componenet/hello-componenet.co
 import {JwtInterceptor} from './helper/jwt-interceptor';
 import {ErrorInterceptor} from './helper/error-interceptor';
 import {ReactiveFormsModule} from '@angular/forms';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     HelloComponenetComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,

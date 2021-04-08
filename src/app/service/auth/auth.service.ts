@@ -6,10 +6,11 @@ import {EventEmitter} from '@angular/core';
 import {environment} from '../../../environments/environment';
 import {map} from 'rxjs/operators';
 import {User} from '../../model/user';
-const API_URL = `${environment.apiUrl}`;
+// const API_URL = `${environment.apiUrl}`;
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   // tslint:disable-next-line:new-parens
   update = new EventEmitter<string>();
@@ -29,11 +30,11 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
   register(user: User): Observable<User> {
-    return this.http.post<User>(API_URL + '/register/create', user);
+    return this.http.post<User>('http://localhost:8080' + '/register/create', user);
   }
   // tslint:disable-next-line:typedef
   login(username: string, password: string) {
-    return this.http.post(API_URL + '/login', {username, password})
+    return this.http.post('http://localhost:8080' + '/login', {username, password})
     .pipe(map( user => {
       localStorage.setItem('user', JSON.stringify(user));
       // @ts-ignore

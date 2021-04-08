@@ -27,7 +27,11 @@ export class RegisterComponent implements OnInit {
       phoneNumber: [null],
       password: [null],
       confirmPassword: [null],
-      check: [null]
+      check: [null],
+    date: [null],
+    email: [null],
+      fullName: [null],
+      address: [null]
     });
     // tslint:disable-next-line:ban-types typedef
   }comparePassword(password: String, confirmPassword: String){

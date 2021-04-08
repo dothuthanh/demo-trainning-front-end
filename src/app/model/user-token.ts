@@ -1,3 +1,5 @@
+import {Role} from './role';
+
 export interface UserToken {
   id: number;
   username: string;
@@ -9,4 +11,5 @@ export interface UserToken {
   address?: string;
   img?: string;
   token?: string;
+  roles: Role[];
 }

@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {HelloComponenetComponent} from './hello-componenet/hello-componenet.component';
 import {AuthGuare} from './helper/auth-guare';
 import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './login/login.component';
+import {UserComponent} from './user/user.component';
 
 const routes: Routes = [
   {
@@ -13,8 +15,16 @@ const routes: Routes = [
   },
   {
     path: '',
+    component: LoginComponent
+  },
+  {
+    path : 'register',
     component: RegisterComponent
-  }
+  },
+  {
+    path : 'admin',
+    component: UserComponent
+  },
 ];
 
 @NgModule({
