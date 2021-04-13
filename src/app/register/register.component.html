@@ -1,104 +1,141 @@
-
-<body class="hold-transition register-page">
-<div class="register-box">
-  <div class="register-logo">
-    <b>Đăng Ký</b>
-  </div>
-  <div class="card">
-    <div class="card-body register-card-body">
-      <form [formGroup]="formRegister" (ngSubmit)="register()">
-        <div class="input-group mb-3">
-          <label class="col-sm-3 col-form-label">Email</label>
-          <br>
-          <input type="email" class="form-control" formControlName="email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <label  class="col-sm-3 col-form-label">Số điện thoại</label><br>
-          <input type="text" class="form-control"  formControlName="phoneNumber">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-phone"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="input-group mb-3">
-          <label  class="col-sm-3 col-form-label">Dia chi</label><br>
-          <input type="text" class="form-control"  formControlName="address">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-phone"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="input-group mb-3">
-          <label  class="col-sm-3 col-form-label">FullName</label><br>
-          <input type="text" class="form-control"  formControlName="fullName">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-phone"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="input-group mb-3">
-          <label  class="col-sm-3 col-form-label">Date</label><br>
-          <input type="text" class="form-control"  formControlName="date">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-phone"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="input-group mb-3">
-          <label  class="col-sm-3 col-form-label">Tài khoản</label><br>
-          <input type="text" class="form-control"  formControlName="username">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <label  class="col-sm-3 col-form-label">Mật khẩu</label><br>
-          <input type="password" class="form-control"  formControlName="password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <label  class="col-sm-3 col-form-label">Nhập lại</label><br>
-          <input type="password" class="form-control"  formControlName="confirmPassword">
-          <div class="input-group-append">
-            <div class="input-group-text">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>
-          </div>
-          <br>
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block" [routerLink]="['/home/index']">Quay lại</button>
-          </div>
-        </div>
-      </form>
-
-      <p class="mb-0">
-        <a [routerLink]="['/login']" class="text-center">Tôi đã có tài khoản</a>
-      </p>
-    </div>
+<html>
+<head>
+  <title>Đăng kí</title>
+  <link rel="stylesheet" href="register.component.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i|Noto+Sans:400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+</head>
+<body>
+<form [formGroup]="formRegister" (ngSubmit)="register()">
+<div class="to">
+  <div class="form">
+      <h2>Đăng ký tai khoan</h2>
+        <i class="fab fa-app-store-ios"></i>
+        <label style="margin-left: -150px;">Họ và tên</label>
+        <input type="text" class="form-control"  formControlName="fullName">
+        <label>Số điện thoại</label>
+        <input type="text" class="form-control"  formControlName="phoneNumber">
+        <label style="margin-left: -180px;">Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <label style="margin-left: -150px;">Username</label>
+        <input type="text" class="form-control"  formControlName="username">
+        <label style="margin-left: -150px;">Address</label>
+        <input type="text" class="form-control"  formControlName="address">
+        <label style="margin-left: -150px;">Date</label>
+        <input type="text" class="form-control"  formControlName="date">
+        <label style="margin-left: -150px;">Pass word</label>
+        <input type="password" class="form-control"  formControlName="password">
+        <label style="margin-left: -180px;">Nhap lai</label>
+        <input type="password" class="form-control"  formControlName="confirmPassword">
+        <a [routerLink]="['']" class="text-center">Tôi đã có tài khoản</a>
+    <input id="submit" type="submit" name="submit" value="Dang ky">
+<!--      <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>-->
   </div>
 </div>
+</form>
 </body>
+</html>
+<!--<body class="hold-transition register-page">-->
+<!--<div class="register-box">-->
+<!--  <div class="register-logo">-->
+<!--    <b>Đăng Ký</b>-->
+<!--  </div>-->
+<!--  <div class="card">-->
+<!--    <div class="card-body register-card-body">-->
+<!--      <form [formGroup]="formRegister" (ngSubmit)="register()">-->
+<!--        <div class="input-group mb-3">-->
+<!--          <label class="col-sm-3 col-form-label">Email</label>-->
+<!--          <br>-->
+<!--          <input type="email" class="form-control" formControlName="email">-->
+<!--          <div class="input-group-append">-->
+<!--            <div class="input-group-text">-->
+<!--              <span class="fas fa-envelope"></span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="input-group mb-3">-->
+<!--          <label  class="col-sm-3 col-form-label">Số điện thoại</label><br>-->
+<!--          <input type="text" class="form-control"  formControlName="phoneNumber">-->
+<!--          <div class="input-group-append">-->
+<!--            <div class="input-group-text">-->
+<!--              <span class="fas fa-phone"></span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="input-group mb-3">-->
+<!--          <label  class="col-sm-3 col-form-label">Dia chi</label><br>-->
+<!--          <input type="text" class="form-control"  formControlName="address">-->
+<!--          <div class="input-group-append">-->
+<!--            <div class="input-group-text">-->
+<!--              <span class="fas fa-phone"></span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="input-group mb-3">-->
+<!--          <label  class="col-sm-3 col-form-label">FullName</label><br>-->
+<!--          <input type="text" class="form-control"  formControlName="fullName">-->
+<!--          <div class="input-group-append">-->
+<!--            <div class="input-group-text">-->
+<!--              <span class="fas fa-phone"></span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="input-group mb-3">-->
+<!--          <label  class="col-sm-3 col-form-label">Date</label><br>-->
+<!--          <input type="text" class="form-control"  formControlName="date">-->
+<!--          <div class="input-group-append">-->
+<!--            <div class="input-group-text">-->
+<!--              <span class="fas fa-phone"></span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="input-group mb-3">-->
+<!--          <label  class="col-sm-3 col-form-label">Tài khoản</label><br>-->
+<!--          <input type="text" class="form-control"  formControlName="username">-->
+<!--          <div class="input-group-append">-->
+<!--            <div class="input-group-text">-->
+<!--              <span class="fas fa-user"></span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="input-group mb-3">-->
+<!--          <label  class="col-sm-3 col-form-label">Mật khẩu</label><br>-->
+<!--          <input type="password" class="form-control"  formControlName="password">-->
+<!--          <div class="input-group-append">-->
+<!--            <div class="input-group-text">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="input-group mb-3">-->
+<!--          <label  class="col-sm-3 col-form-label">Nhập lại</label><br>-->
+<!--          <input type="password" class="form-control"  formControlName="confirmPassword">-->
+<!--          <div class="input-group-append">-->
+<!--            <div class="input-group-text">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--          <div class="col-4">-->
+<!--            <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>-->
+<!--          </div>-->
+<!--          <br>-->
+<!--          <div class="col-4">-->
+<!--            <button type="submit" class="btn btn-primary btn-block" [routerLink]="['/home/index']">Quay lại</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </form>-->
+
+<!--      <p class="mb-0">-->
+<!--        <a [routerLink]="['']" class="text-center">Tôi đã có tài khoản</a>-->
+<!--      </p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</body>-->
 
 

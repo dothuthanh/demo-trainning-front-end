@@ -19,6 +19,8 @@ export class JwtInterceptor implements HttpInterceptor{
       });
       // @ts-ignore
       return next.handle(request);
+    }else{
+      return next.handle(request);
     }
   }
 }

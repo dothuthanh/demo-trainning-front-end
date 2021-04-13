@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject, Observable, pipe} from 'rxjs';
+import {BehaviorSubject, Observable, of, pipe} from 'rxjs';
 import {UserToken} from '../../model/user-token';
 import {HttpClient} from '@angular/common/http';
 import {EventEmitter} from '@angular/core';
@@ -33,15 +33,17 @@ export class AuthService {
     return this.http.post<User>('http://localhost:8080' + '/register/create', user);
   }
   // tslint:disable-next-line:typedef
-  login(username: string, password: string) {
-    return this.http.post('http://localhost:8080' + '/login', {username, password})
-    .pipe(map( user => {
-      localStorage.setItem('user', JSON.stringify(user));
-      // @ts-ignore
-      this.currentUserSubject.next(user);
-      this.update.emit('login');
-      return user;
-    }));
+  login(username: string, password: string):Observable<any> {
+    const body = {username,password};
+    console.log(this.http);
+    return this.http.post('http://localhost:8080/login', body);
+    // .pipe(map( user => {
+    //   localStorage.setItem('user', JSON.stringify(user));
+    //   // @ts-ignore
+    //   this.currentUserSubject.next(user);
+    //   this.update.emit('login');
+    //   return user;
+    // }));
   }
   // tslint:disable-next-line:typedef
   logout() {

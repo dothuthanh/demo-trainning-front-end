@@ -76,30 +76,34 @@ export class LoginComponent implements OnInit {
   }
   // tslint:disable-next-line:typedef
    login() {
+    
     this.submitted = true;
-    this.loading = true;
-    this.authenticationService.login(this.loginForm.value.username, this.loginForm.value.password)
-      .pipe(first())
+    this.loading = true;    
+    console.log(this.loginForm.value);
+    this.authenticationService.login(this.loginForm.value.username, this.loginForm.value.password)      
       .subscribe(
         (data: any) => {
-          localStorage.setItem('ACCESS_TOKEN', data.accessToken);
-          localStorage.setItem('ROLE', data.roles[0].authority);
-          if ( data.roles.length > 1 ) {
-            if ( data.roles[0].authority === 'ROLE_ADMIN' || data.roles[1].authority === 'ROLE_ADMIN' ) {
-              localStorage.setItem('ROLE', 'ROLE_ADMIN');
-            }
-          }
-          localStorage.setItem('USERNAME', data.username);
-          if (data.roles[0].authority === 'ROLE_ADMIN') {
-            this.router.navigate(['/admin']);
-          } else {
-            this.router.navigate(['/login']);
-          }
+          console.log(data);
+          // localStorage.setItem('ACCESS_TOKEN', data.accessToken);
+          // localStorage.setItem('ROLE', data.roles[0].authority);
+          // if ( data.roles.length > 1 ) {
+          //   if ( data.roles[0].authority === 'ROLE_ADMIN' || data.roles[1].authority === 'ROLE_ADMIN' ) {
+          //     localStorage.setItem('ROLE', 'ROLE_ADMIN');
+          //   }
+          // }
+          // localStorage.setItem('USERNAME', data.username);
+          // if (data.roles[0].authority === 'ROLE_ADMIN') {
+          //   this.router.navigate(['/admin']);
+          // } else {
+          //   this.router.navigate(['/login']);
+          // }
         },
         error => {
+          console.log(error);
           alert('Tài khoản của bạn đã bị khoá hoặc sai mật khẩu!');
           this.loading = false;
-        });
+        }
+        );
    }
   // tslint:disable-next-line:typedef
   get username(){
